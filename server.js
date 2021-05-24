@@ -10,6 +10,7 @@ const helpers = require("./utils/helpers");
 
 const exphbs = require("express-handlebars");
 const hbs = exphbs.create({helpers}); //helpers
+const path = require('path'); 
 
 //allows us to use express-session and then link to sequelize store (for cookies)
 // session connection to sequelize database
@@ -49,5 +50,5 @@ app.use(routes);
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log("Now listening"));
+  app.listen(PORT, () => console.log("Now listening")); 
 });
